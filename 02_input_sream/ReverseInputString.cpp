@@ -21,7 +21,7 @@ namespace samples
             return;
         }
 
-        size_t len = strlen(buf);
+        const size_t len = strlen(buf);
 
         for (size_t i = 0; i < len / 2; i++)
         {
