@@ -25,12 +25,11 @@ namespace samples
 
         for (size_t i = 0; i < len / 2; i++)
         {
-            char tmp = buf[i];
+            const char tmp = buf[i];
             buf[i] = buf[len - 1 - i];
             buf[len - 1 - i] = tmp;
         }
 
-        cin.clear();
         cout << "Reversed: " << buf << endl;
     }
 }
