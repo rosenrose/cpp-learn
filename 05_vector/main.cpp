@@ -2,6 +2,7 @@
 #include "Vector.h"
 
 using std::cout;
+using std::endl;
 
 int main()
 {
@@ -13,31 +14,25 @@ int main()
 
     v1.SetX(30);
     v1.SetY(37);
-    v3.Add(v4);
+    v3 += v4;
 
-    cout << "v1: ";
-    v1.Print();
+    cout << std::boolalpha << (v3 == v3) << endl;
 
-    cout << "v2: ";
-    v2.Print();
+    cout << "v1: " << v1 << endl;
+    cout << "v2: " << v2 << endl;
+    cout << "v3: " << v3 << endl;
+    cout << "v4: " << v4 << endl;
 
-    cout << "v3: ";
-    v3.Print();
+    Vector v5 = v1 * v2;
+    cout << "v5: " << v5 << endl;
 
-    cout << "v4: ";
-    v4.Print();
+    v2 *= 3;
+    cout << "v2: " << v2 << endl;
 
-    Vector v5 = v1.Multiply(v2);
-    cout << "v5: ";
-    v5.Print();
+    v4 *= v2;
+    cout << "v4: " << v4 << endl;
 
-    v2.Scale(3);
-    cout << "v2: ";
-    v2.Print();
-
-    v4.Scale(v2);
-    cout << "v4: ";
-    v4.Print();
+    cout << "2 * v1: " << 2 * v1 << endl;
 
     return 0;
 }

@@ -8,14 +8,14 @@ Vector::Vector()
     : mX(0),
       mY(0)
 {
-    cout << "Vector(): (" << mX << ", " << mY << ")" << endl;
+    cout << "Vector(): (" << *this << ")" << endl;
 }
 
 Vector::Vector(const int x, const int y)
     : mX(x),
       mY(y)
 {
-    cout << "Vector(const int x, const int y): (" << mX << ", " << mY << ")" << endl;
+    cout << "Vector(const int x, const int y): (" << *this << ")" << endl;
 }
 
 int Vector::GetX() const
@@ -36,40 +36,58 @@ void Vector::SetY(const int y)
     mY = y;
 }
 
-void Vector::Add(const Vector &other)
+bool Vector::operator==(const Vector &rhs) const
 {
-    mX += other.mX;
-    mY += other.mY;
+    return (mX == rhs.mX) && (mY == rhs.mY);
 }
 
-bool Vector::IsEqual(const Vector &other) const
+Vector Vector::operator+(const Vector &rhs) const
 {
-    return (mX == other.mX) && (mY == other.mY);
+    return Vector(mX + rhs.mX, mY + rhs.mY);
 }
 
-Vector Vector::Multiply(const Vector &other) const
+Vector &Vector::operator+=(const Vector &rhs)
 {
-    return Vector(mX * other.mX, mY * other.mY);
+    mX += rhs.mX;
+    mY += rhs.mY;
+
+    return *this;
 }
 
-Vector Vector::Multiply(const int multiplier) const
+Vector Vector::operator*(const Vector &rhs) const
 {
-    return Vector(mX * multiplier, mY * multiplier);
+    return Vector(mX * rhs.mX, mY * rhs.mY);
 }
 
-void Vector::Scale(const Vector &other)
+Vector Vector::operator*(const int rhs) const
 {
-    mX *= other.mX;
-    mY *= other.mY;
+    return Vector(mX * rhs, mY * rhs);
 }
 
-void Vector::Scale(const int multiplier)
+Vector operator*(const int lhs, const Vector &rhs)
 {
-    mX *= multiplier;
-    mY *= multiplier;
+    return Vector(lhs * rhs.mX, lhs * rhs.mY);
 }
 
-void Vector::Print() const
+Vector &Vector::operator*=(const Vector &rhs)
 {
-    cout << mX << ", " << mY << endl;
+    mX *= rhs.mX;
+    mY *= rhs.mY;
+
+    return *this;
+}
+
+Vector &Vector::operator*=(const int rhs)
+{
+    mX *= rhs;
+    mY *= rhs;
+
+    return *this;
+}
+
+std::ostream &operator<<(std::ostream &os, const Vector &rhs)
+{
+    os << rhs.mX << ", " << rhs.mY;
+
+    return os;
 }
