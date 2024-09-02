@@ -2,7 +2,6 @@
 #include "Vector.h"
 
 using std::cout;
-using std::endl;
 
 int main()
 {
@@ -14,10 +13,31 @@ int main()
 
     v1.SetX(30);
     v1.SetY(37);
-    v2.Add(v4);
+    v3.Add(v4);
 
-    cout << v1.GetX() << ", " << v1.GetY() << endl;
-    cout << v2.GetX() << ", " << v2.GetY() << endl;
+    cout << "v1: ";
+    v1.Print();
+
+    cout << "v2: ";
+    v2.Print();
+
+    cout << "v3: ";
+    v3.Print();
+
+    cout << "v4: ";
+    v4.Print();
+
+    Vector v5 = v1.Multiply(v2);
+    cout << "v5: ";
+    v5.Print();
+
+    v2.Scale(3);
+    cout << "v2: ";
+    v2.Print();
+
+    v4.Scale(v2);
+    cout << "v4: ";
+    v4.Print();
 
     return 0;
 }
