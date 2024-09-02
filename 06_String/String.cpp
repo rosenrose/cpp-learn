@@ -21,6 +21,17 @@ namespace samples
         memcpy(mString, other.mString, mSize);
     }
 
+    String &String::operator=(const String &rhs)
+    {
+        this->~String();
+
+        mSize = rhs.mSize;
+        mString = new char[mSize];
+        memcpy(mString, rhs.mString, mSize);
+
+        return *this;
+    }
+
     String::~String()
     {
         delete[] mString;
