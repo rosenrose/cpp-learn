@@ -17,3 +17,27 @@ Vector::Vector(const int x, const int y)
 {
     cout << "Vector(const int x, const int y): (" << mX << ", " << mY << ")" << endl;
 }
+
+void Vector::SetX(const int x)
+{
+    mX = x;
+}
+void Vector::SetY(const int y)
+{
+    mY = y;
+}
+
+int Vector::GetX() const
+{
+    return mX;
+}
+int Vector::GetY() const
+{
+    return mY;
+}
+
+void Vector::Add(const Vector &other)
+{
+    mX += other.mX;
+    mY += other.mY;
+}
