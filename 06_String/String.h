@@ -7,7 +7,7 @@ namespace samples
     public:
         String(const char *const str);
         String(const String &other);
-        String &operator=(const String &rhs);
+        const String &operator=(const String &rhs);
 
         ~String();
 

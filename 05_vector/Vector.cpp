@@ -46,7 +46,7 @@ Vector Vector::operator+(const Vector &rhs) const
     return Vector(mX + rhs.mX, mY + rhs.mY);
 }
 
-Vector &Vector::operator+=(const Vector &rhs)
+const Vector &Vector::operator+=(const Vector &rhs)
 {
     mX += rhs.mX;
     mY += rhs.mY;
@@ -69,7 +69,7 @@ Vector operator*(const int lhs, const Vector &rhs)
     return Vector(lhs * rhs.mX, lhs * rhs.mY);
 }
 
-Vector &Vector::operator*=(const Vector &rhs)
+const Vector &Vector::operator*=(const Vector &rhs)
 {
     mX *= rhs.mX;
     mY *= rhs.mY;
@@ -77,7 +77,7 @@ Vector &Vector::operator*=(const Vector &rhs)
     return *this;
 }
 
-Vector &Vector::operator*=(const int rhs)
+const Vector &Vector::operator*=(const int rhs)
 {
     mX *= rhs;
     mY *= rhs;

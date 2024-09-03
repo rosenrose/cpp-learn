@@ -19,14 +19,14 @@ public:
     bool operator==(const Vector &rhs) const;
 
     Vector operator+(const Vector &rhs) const;
-    Vector &operator+=(const Vector &rhs);
+    const Vector &operator+=(const Vector &rhs);
 
     Vector operator*(const Vector &rhs) const;
     Vector operator*(const int rhs) const;
     friend Vector operator*(const int lhs, const Vector &rhs);
 
-    Vector &operator*=(const Vector &rhs);
-    Vector &operator*=(const int rhs);
+    const Vector &operator*=(const Vector &rhs);
+    const Vector &operator*=(const int rhs);
 
 private:
     int mX;

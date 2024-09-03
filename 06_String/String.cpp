@@ -21,7 +21,7 @@ namespace samples
         memcpy(mString, other.mString, mSize);
     }
 
-    String &String::operator=(const String &rhs)
+    const String &String::operator=(const String &rhs)
     {
         this->~String();
 
