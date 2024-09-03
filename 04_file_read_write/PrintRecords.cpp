@@ -2,6 +2,12 @@
 #include <iomanip>
 #include "PrintRecords.h"
 
+using std::cin;
+using std::cout;
+using std::endl;
+using std::ios_base;
+using std::string;
+
 namespace samples
 {
     Record ReadRecord(std::istream &stream, const bool isPrompt)

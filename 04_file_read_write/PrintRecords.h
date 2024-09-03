@@ -3,18 +3,12 @@
 #include <iostream>
 #include <string>
 
-using std::cin;
-using std::cout;
-using std::endl;
-using std::ios_base;
-using std::string;
-
 struct Record
 {
-    string FirstName;
-    string LastName;
-    string StudentId;
-    string Score;
+    std::string FirstName;
+    std::string LastName;
+    std::string StudentId;
+    std::string Score;
 };
 
 namespace samples
