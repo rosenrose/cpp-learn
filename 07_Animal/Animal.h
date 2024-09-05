@@ -7,6 +7,10 @@ namespace samples
     public:
         Animal();
         Animal(const int age);
+        virtual ~Animal();
+
+        virtual void Move() const;
+        virtual void Speak() const;
 
         int GetAge() const;
 

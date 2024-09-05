@@ -9,7 +9,7 @@ namespace samples
         String(const String &other);
         const String &operator=(const String &rhs);
 
-        ~String();
+        virtual ~String();
 
         void Print() const;
 

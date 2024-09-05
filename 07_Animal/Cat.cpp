@@ -1,14 +1,21 @@
+#include <iostream>
 #include "Cat.h"
 
-using std::string;
+using std::cout;
+using std::endl;
 
 namespace samples
 {
     Cat::Cat(const int age)
         : Animal(age) {}
 
-    string Cat::Meow() const
+    void Cat::Move() const
     {
-        return string("Meowow");
+        cout << "cat move" << endl;
+    }
+
+    void Cat::Speak() const
+    {
+        cout << "Meowow" << endl;
     }
 }

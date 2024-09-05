@@ -1,14 +1,21 @@
+#include <iostream>
 #include "Dog.h"
 
-using std::string;
+using std::cout;
+using std::endl;
 
 namespace samples
 {
     Dog::Dog(const int age)
         : Animal(age) {}
 
-    string Dog::Bark() const
+    void Dog::Move() const
     {
-        return string("BowWow");
+        cout << "dog move" << endl;
+    }
+
+    void Dog::Speak() const
+    {
+        cout << "BowWow" << endl;
     }
 }

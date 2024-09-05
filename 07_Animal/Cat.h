@@ -9,6 +9,8 @@ namespace samples
     {
     public:
         Cat(const int age);
-        std::string Meow() const;
+
+        virtual void Move() const;
+        virtual void Speak() const;
     };
 }

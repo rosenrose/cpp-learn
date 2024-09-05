@@ -23,7 +23,7 @@ namespace samples
 
     const String &String::operator=(const String &rhs)
     {
-        this->~String();
+        String::~String();
 
         mSize = rhs.mSize;
         mString = new char[mSize];
