@@ -6,11 +6,8 @@ using std::endl;
 
 namespace samples
 {
-    Animal::Animal() {}
     Animal::Animal(const int age)
         : mAge(age) {}
-
-    Animal::~Animal() {}
 
     int Animal::GetAge() const
     {

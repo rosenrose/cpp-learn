@@ -5,9 +5,9 @@ namespace samples
     class Animal
     {
     public:
-        Animal();
+        Animal() {};
         Animal(const int age);
-        virtual ~Animal();
+        virtual ~Animal() {};
 
         virtual void Move() const;
         virtual void Speak() const = 0;
