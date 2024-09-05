@@ -21,9 +21,4 @@ namespace samples
     {
         cout << "animal move" << endl;
     }
-
-    void Animal::Speak() const
-    {
-        cout << "animal speak" << endl;
-    }
 }

@@ -10,7 +10,7 @@ namespace samples
         virtual ~Animal();
 
         virtual void Move() const;
-        virtual void Speak() const;
+        virtual void Speak() const = 0;
 
         int GetAge() const;
 
