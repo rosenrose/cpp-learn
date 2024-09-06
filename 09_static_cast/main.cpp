@@ -20,6 +20,9 @@ int main()
     cout << "dog1 address: " << dog1->GetAddress() << endl;
     cout << "dog2 address: " << dog2->GetAddress() << endl;
 
+    cout << "type: " << cat->GetType() << endl;
+    cout << "type: " << Cat::GetType() << endl;
+
     delete pet1;
     delete pet2;
 

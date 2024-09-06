@@ -11,8 +11,10 @@ namespace samples
         virtual ~Cat();
 
         const char *GetName() const;
+        static const char *GetType();
 
     private:
         char *mName;
+        static const char *mAnimalType;
     };
 }
