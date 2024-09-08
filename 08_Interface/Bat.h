@@ -8,7 +8,7 @@ namespace samples
     class Bat : public IFlyable, public IWalkable
     {
     public:
-        void Fly() const;
-        void Walk() const;
+        virtual void Fly() const override;
+        virtual void Walk() const override;
     };
 }

@@ -10,7 +10,7 @@ namespace samples
     public:
         Dog(const int age);
 
-        virtual void Move() const;
-        virtual void Speak() const;
+        virtual void Move() const override;
+        virtual void Speak() const override;
     };
 }

@@ -20,12 +20,5 @@ int main()
     delete cat;
     delete dog;
 
-    samples::Cat dd(3);
-    samples::Animal &d = dd;
-
-    d.Speak();
-
-    auto a = samples::Animal::Speak;
-
     return 0;
 }

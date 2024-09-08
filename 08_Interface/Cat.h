@@ -7,6 +7,6 @@ namespace samples
     class Cat : public IWalkable
     {
     public:
-        void Walk() const;
+        virtual void Walk() const override;
     };
 }
