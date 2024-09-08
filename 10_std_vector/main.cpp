@@ -9,7 +9,7 @@ using std::vector;
 
 void PrintVector(const vector<Score> &scores)
 {
-    for (const Score &score : scores)
+    for (const auto &score : scores)
     {
         score.Print();
     }
@@ -17,7 +17,7 @@ void PrintVector(const vector<Score> &scores)
 
 void PrintVector(const vector<Score *> &scores)
 {
-    for (const Score *const score : scores)
+    for (const auto *const score : scores)
     {
         score->Print();
     }
@@ -38,7 +38,7 @@ int main()
     PrintVector(scores1);
     cout << endl;
 
-    for (vector<Score>::iterator it = scores1.begin(); it != scores1.end();)
+    for (auto it = scores1.begin(); it != scores1.end();)
     {
         if (it->GetClassName() == "Java")
         {
@@ -49,7 +49,7 @@ int main()
         it++;
     }
 
-    for (Score &score : scores1)
+    for (auto &score : scores1)
     {
         if (score.GetScore() == 30)
         {
@@ -74,7 +74,7 @@ int main()
     PrintVector(scores2);
     cout << endl;
 
-    for (vector<Score *>::iterator it = scores2.begin(); it != scores2.end();)
+    for (auto it = scores2.begin(); it != scores2.end();)
     {
         if ((*it)->GetClassName() == "Java")
         {
@@ -85,7 +85,7 @@ int main()
         it++;
     }
 
-    for (Score *score : scores2)
+    for (auto *const score : scores2)
     {
         if (score->GetScore() == 30)
         {
@@ -97,7 +97,7 @@ int main()
     PrintVector(scores2);
     cout << endl;
 
-    for (Score *score : scores2)
+    for (auto *const score : scores2)
     {
         delete score;
     }

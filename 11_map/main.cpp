@@ -18,7 +18,7 @@ int main()
     scores1.insert(pair<StudentInfo, int>(StudentInfo("Poppy", "B12345678"), 70));
     scores1.insert(pair<StudentInfo, int>(StudentInfo("Lulu", "cccc"), 50));
 
-    for (const pair<const StudentInfo, int> &score : scores1)
+    for (const auto &score : scores1)
     {
         cout << score.first.GetName() << " [" << score.first.GetStudentId() << "]: " << score.second << endl;
     }
@@ -29,7 +29,7 @@ int main()
     scores2.insert(pair<StudentInfo2, int>(StudentInfo2("Poppy", "B12345678"), 70));
     scores2.insert(pair<StudentInfo2, int>(StudentInfo2("Lulu", "cccc"), 50));
 
-    for (const pair<const StudentInfo2, int> &score : scores2)
+    for (const auto &score : scores2)
     {
         cout << score.first.GetName() << " [" << score.first.GetStudentId() << "]: " << score.second << endl;
     }
