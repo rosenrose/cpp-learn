@@ -2,13 +2,13 @@
 
 namespace samples
 {
-    class MyVector
+    class MyVector final
     {
     public:
         MyVector() = delete;
         MyVector(const int x, const int y);
 
-        virtual ~MyVector() = default;
+        ~MyVector() = default;
 
         int GetX() const;
         int GetY() const;

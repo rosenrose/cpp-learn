@@ -4,13 +4,13 @@
 
 namespace samples
 {
-    class Ball
+    class Ball final
     {
     public:
         Ball() = delete;
         Ball(eColor color);
 
-        virtual ~Ball() = default;
+        ~Ball() = default;
 
         void SayColor() const;
 
