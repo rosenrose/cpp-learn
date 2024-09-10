@@ -17,19 +17,19 @@ namespace samples
     String::String(const String &other)
         : mSize(other.mSize)
     {
+        cout << "copy constructor" << endl;
+
         mString = new char[mSize];
         memcpy(mString, other.mString, mSize);
     }
 
-    const String &String::operator=(const String &rhs)
+    String::String(String &&other)
+        : mString(other.mString), mSize(other.mSize)
     {
-        String::~String();
+        cout << "move constructor" << endl;
 
-        mSize = rhs.mSize;
-        mString = new char[mSize];
-        memcpy(mString, rhs.mString, mSize);
-
-        return *this;
+        other.mString = nullptr;
+        other.mSize = 0;
     }
 
     String::~String()
@@ -37,8 +37,54 @@ namespace samples
         delete[] mString;
     }
 
-    void String::Print() const
+    const String &String::operator=(const String &rhs)
     {
-        cout << mString << endl;
+        cout << "copy assign" << endl;
+
+        if (this != &rhs)
+        {
+            String::~String();
+
+            mSize = rhs.mSize;
+            mString = new char[mSize];
+            memcpy(mString, rhs.mString, mSize);
+        }
+
+        return *this;
+    }
+
+    const String &String::operator=(String &&rhs)
+    {
+        cout << "move assign" << endl;
+
+        if (this != &rhs)
+        {
+            String::~String();
+
+            mString = rhs.mString;
+            mSize = rhs.mSize;
+
+            rhs.mString = nullptr;
+            rhs.mSize = 0;
+        }
+
+        return *this;
+    }
+
+    char *String::GetString() const
+    {
+        return mString;
+    }
+
+    int String::GetSize() const
+    {
+        return mSize;
+    }
+
+    std::ostream &operator<<(std::ostream &os, const String &rhs)
+    {
+        os << rhs.mString << endl;
+
+        return os;
     }
 }

@@ -1,17 +1,38 @@
+#include <iostream>
+#include <cassert>
 #include "String.h"
+
+using samples::String;
+using std::cout;
+using std::endl;
+
+String MakeString()
+{
+    return String("temp");
+}
 
 int main()
 {
-    samples::String a("hello");
-    samples::String *b = new samples::String("foo");
-    samples::String c = a;
+    String a("hello");
+    String *b = new String("foo");
+    String c = a;
 
-    b->Print();
+    cout << "b: " << *b << endl;
     c = *b;
     delete b;
 
-    a.Print();
-    c.Print();
+    cout << "a: " << a << endl;
+    cout << "c: " << c << endl;
+
+    String d(std::move(a));
+
+    assert(a.GetString() == nullptr);
+    assert(a.GetSize() == 0);
+    cout << "d: " << d << endl;
+
+    d = MakeString();
+
+    cout << "d: " << d << endl;
 
     return 0;
 }
