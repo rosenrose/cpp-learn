@@ -2,8 +2,8 @@
 
 namespace samples
 {
-    Node::Node(const int data)
-        : mData(data), mNext(nullptr)
+    Node::Node(const std::string &key, const int data)
+        : mKey(key), mData(data), mNext(nullptr)
     {
     }
 
@@ -15,6 +15,11 @@ namespace samples
     void Node::SetNext(const shared_ptr<Node> next)
     {
         mNext = next;
+    }
+
+    const std::string &Node::GetKey() const
+    {
+        return mKey;
     }
 
     int Node::GetData() const
